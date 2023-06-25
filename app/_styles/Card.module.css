@@ -2,7 +2,8 @@
   width: 250px;
   height: 290px;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.582);
-  margin-bottom: 30px;
+  margin: 30px;
+  transition: all 1s;
 }
 
 .cardImg {
@@ -13,25 +14,52 @@
 
 .cardBottom {
   padding: 10px;
+  position: relative;
 }
 
 .titleBox {
   font-size: large;
   font-weight: 600;
+  position: absolute;
+  text-decoration: none;
+  color: white;
+}
+
+.titleBox:hover {
+  color: rgb(166, 101, 209);
+  transition: all 0.5s;
 }
 
 .category {
-  color: rgb(226, 226, 39);
+  color: rgb(166, 101, 209);
 }
 
 .date {
   font-size: 0.9rem;
   font-weight: bold;
   color: gray;
+  margin-top: 50px;
 }
 
 .counts {
   width: 80px;
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
+}
+
+.countBox {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.count {
+  margin-left: 5px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.icon {
+  color: rgb(204, 204, 204);
 }

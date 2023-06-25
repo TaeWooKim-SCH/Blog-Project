@@ -9,10 +9,13 @@
 .homeTitle {
   font-size: xxx-large;
   font-weight: bold;
-  color: rgb(226, 226, 39);
+  color: rgb(166, 101, 209);
   margin: 100px 0;
 }
 
 .contentList {
-  margin-top: 50px;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
