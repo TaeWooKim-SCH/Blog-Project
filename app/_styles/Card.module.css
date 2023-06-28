@@ -1,8 +1,9 @@
 .cardSection {
+  background-color: rgb(49, 50, 59);
   width: 250px;
   height: 290px;
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.582);
-  margin: 30px;
+  border: 3px solid rgba(166, 101, 209, 0.438);
+  margin: 30px 20px;
   transition: all 1s;
 }
 

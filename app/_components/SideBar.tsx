@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import style from '../_styles/SideBar.module.css';
+import { HiOutlinePencilSquare } from 'react-icons/hi2';
+import Link from 'next/link';
 
 function SideBar() {
   return (
@@ -14,6 +16,7 @@ function SideBar() {
         <Image className={style.profile} src='/profile.jpg' width="100" height="100" alt="프로필 사진" />
         <div className={style.name}>Tae Woo</div>
         <div className={style.jobName}>Front-end</div>
+        <Link className={style.post} href="/post"><HiOutlinePencilSquare size="30" /></Link>
       </div>
       <div className={style.container}>
         <div className={style.category}>전체글보기</div>
