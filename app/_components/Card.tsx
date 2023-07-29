@@ -11,13 +11,13 @@ import { CardType } from '../data/dummyData';
 export default function Card({ data }: PropsType) {
 
   return (
-    <section className={style.cardSection}>
+    <Link href={`/post/${data._id}`} className={style.cardContainer}>
       <Image className={style.cardImg} src={data.img} width="0" height="0" alt="이미지"></Image>
       <section className={style.cardBottom}>
-        <Link href={`/post/${data._id}`} className={style.titleBox}>
+        <div className={style.cardTitle}>
           <span className={style.category}>[{data.category}]</span>
           <span className={style.title}> {data.title}</span>
-        </Link>
+        </div>
         <div className={style.date}>{data.createdAt}</div>
         <div className={style.counts}>
           <div className={style.countBox}>
@@ -34,7 +34,7 @@ export default function Card({ data }: PropsType) {
           </div>
         </div>
       </section>
-    </section>
+    </Link>
   );
 }
 

@@ -1,9 +1,46 @@
 .postSection {
   width: 100%;
+  padding-left: 250px;
   margin-top: 100px;
-  margin-left: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+}
+
+.editorContainer {
+  width: 90%;
+  margin: auto;
+}
+
+.contentTitle {
+  width: 60%;
+  height: 50px;
+  margin-bottom: 30px;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid #616161;
+  color: white;
+  font-size: x-large;
+}
+
+.editorBox {
+  width: 100%;
+  overflow: hidden;
+  margin-right: 10px;
+  margin-bottom: 50px;
+}
+
+.postBtn {
+  display: block;
+  background: transparent;
+  color: white;
+  border: 1px solid rgb(166, 101, 209);
+  border-radius: 10px;
+  font-size: large;
+  padding: 10px 15px;
+  margin: auto;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.postBtn:hover {
+  background-color: rgba(166, 101, 209, 0.678);
 }

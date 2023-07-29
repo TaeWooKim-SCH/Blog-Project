@@ -6,7 +6,7 @@ import Card from './_components/Card';
 import { CardType } from './data/dummyData';
 
 export default function Home() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<[]>([]);
 
   const dataFetch = async () => {
     const res = await fetch('/api/content/list')
