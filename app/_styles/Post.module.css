@@ -1,7 +1,7 @@
 .postSection {
   width: 100%;
   padding-left: 250px;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .editorContainer {
@@ -19,6 +19,49 @@
   border-bottom: 3px solid #616161;
   color: white;
   font-size: x-large;
+}
+
+.firstImgContainer {
+  margin-bottom: 30px;
+}
+
+.firstImgBox {
+  display: block;
+  width: 60px;
+  background-color: rgb(166, 101, 209);
+  padding: 5px 10px;
+  font-size: small;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.firstImgInput {
+  display: none;
+  color: black;
+}
+
+.previewBox {
+  width: 230px;
+  height: 230px;
+  border: 1px solid rgb(166, 101, 209);
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+}
+
+.categorySelectBox {
+  display: block;
+  width: 300px;
+  font-size: medium;
+  padding: 5px 10px;
+  margin-bottom: 30px;
+  outline: none;
+  background-color: #dbdbdb;
+  border-radius: 10px;
 }
 
 .editorBox {

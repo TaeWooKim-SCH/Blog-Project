@@ -1,32 +1,26 @@
-"use client"
-
-import { useEffect, useState } from 'react';
 import style from './page.module.css';
 import Card from './_components/Card';
 import { CardType } from './data/dummyData';
 
-export default function Home() {
-  const [data, setData] = useState<[]>([]);
+async function getData() {
+    const res = await fetch('http://localhost:3000/api/content/list');
+    const data = await res.json();
+    return data;
+}
 
-  const dataFetch = async () => {
-    const res = await fetch('/api/content/list')
-    const json = await res.json();
-    setData(json);
-  }
-
-  useEffect(() => {
-    dataFetch();
-  }, [])
+export default async function Home() {
+  const data = await getData();
 
   return (
     <section className={style.home}>
       <div className={style.homeTitle}>D E V. L o g</div>
       <section className={style.contentList}>
-        {data.length ?
-          data.map((card: CardType) => <Card key={card._id} data={card} />) :
-          <div>로딩중입니다...</div>
+        {data.length &&
+          data.map((card: CardType) => <Card key={card._id} data={card} />)
+          
         }
       </section>
     </section>
   )
 }
+

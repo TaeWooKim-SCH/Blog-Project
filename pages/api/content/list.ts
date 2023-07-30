@@ -8,6 +8,5 @@ export default async function handler(
   ): Promise<void> {
   const db: Db = await connectDB();
   const result: object = await db.collection('contents').find().toArray();
-
   res.json(result);
 }
