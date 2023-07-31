@@ -1,9 +1,18 @@
 'use client'
 
-import MDEditor from "@uiw/react-md-editor";
+import dynamic from 'next/dynamic';
+import style from '../_styles/PostDetail.module.css';
+
+const EditerMarkdown = dynamic(
+  () =>
+    import("@uiw/react-md-editor").then((mod) => {
+      return mod.default.Markdown;
+    }),
+  { ssr: false }
+);
 
 export default function MDEditorPreview({ content }: any) {
   return (
-    <MDEditor.Markdown source={content} />
+    <EditerMarkdown style={{backgroundColor: 'transparent'}} source={content} />
   );
 }

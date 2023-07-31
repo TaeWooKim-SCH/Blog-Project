@@ -3,3 +3,13 @@
   padding-left: 250px;
   color: white;
 }
+
+.detailSection {
+  width: 60%;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.previewContainer {
+  background-color: white;
+}
