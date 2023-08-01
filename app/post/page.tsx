@@ -18,10 +18,8 @@ type FormDataType = {
 export default function Post() {
   const { register, handleSubmit, setValue, watch, formState: { isSubmitting } } = useForm<FormDataType>();
   const contentValue = watch('content');
-  console.log(watch('img'));
+
   const customSubmitHandler = (data: FormDataType) => {
-    console.log(JSON.stringify(data));
-    console.log(isSubmitting);
     fetch('http://localhost:3000/api/content/add', {
       method: 'POST',
       body: JSON.stringify(data)
