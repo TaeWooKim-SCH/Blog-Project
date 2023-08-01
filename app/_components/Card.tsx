@@ -6,7 +6,6 @@ import { IoChatbubbleEllipsesSharp } from 'react-icons/io5';
 import Link from 'next/link';
 
 import style from '../_styles/Card.module.css';
-import { CardType } from '../data/dummyData';
 
 export default function Card({ data }: PropsType) {
 
@@ -40,4 +39,16 @@ export default function Card({ data }: PropsType) {
 
 interface PropsType {
   data: CardType;
+}
+
+export interface CardType {
+  _id: string;
+  title: string;
+  category: string;
+  img: string;
+  content: string;
+  likes: number;
+  views: number;
+  answerCount: number;
+  createdAt: string;
 }
