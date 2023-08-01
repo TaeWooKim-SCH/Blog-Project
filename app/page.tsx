@@ -1,5 +1,6 @@
 import style from './page.module.css';
 import Card from './_components/Card';
+import { CardType } from './_components/Card';
 
 async function getData() {
     const res = await fetch('http://localhost:3000/api/content/list');
@@ -19,15 +20,4 @@ export default async function Home() {
       </section>
     </section>
   )
-}
-
-interface CardType {
-  _id: string;
-  img: string;
-  category: string;
-  title: string;
-  createdAt: string;
-  views: number;
-  answerCount: number;
-  likes: number;
 }

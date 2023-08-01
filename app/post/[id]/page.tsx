@@ -9,12 +9,13 @@ async function getData(id: string) {
 export default async function Detail({ params }: any) {
   const { id } = params;
   const data: contentDetailType = await getData(id);
-  console.log(data);
 
   return (
     <main className={style.detailContainer}>
-      <h1>{data.title}</h1>
-      {/* <MDEditorPreview content={data.content} /> */}
+      <section className={style.detailSection}>
+        <h1>{data.title}</h1>
+        <MDEditorPreview content={data.content} />
+      </section>
     </main>
   );
 }
