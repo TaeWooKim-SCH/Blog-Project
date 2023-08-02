@@ -13,7 +13,7 @@ export default async function Detail({ params }: any) {
   return (
     <main className={style.detailContainer}>
       <section className={style.detailSection}>
-        <h1>{data.title}</h1>
+        <h1 className={style.contentTitle}>{data.title}</h1>
         <MDEditorPreview content={data.content} />
       </section>
     </main>
