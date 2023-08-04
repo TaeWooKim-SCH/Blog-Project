@@ -15,9 +15,7 @@ import dynamic from 'next/dynamic';
 // 이는 @uiw/react-md-editor와 같이 브라우저 전용 라이브러리를 사용할 때 유용합니다.
 // 따라서 EditerMarkdown 컴포넌트는 클라이언트 측에서 비동기적으로 로드되며, 서버 측 렌더링에는 영향을 미치지 않습니다.
 
-const EditerMarkdown = dynamic(() => import("@uiw/react-md-editor").then((mod) => {
-      return mod.default.Markdown;
-    }),
+const EditerMarkdown = dynamic(() => import("@uiw/react-md-editor").then((mod) => mod.default.Markdown),
   { ssr: false }
 );
 
