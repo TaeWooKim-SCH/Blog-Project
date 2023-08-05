@@ -21,6 +21,12 @@ const EditerMarkdown = dynamic(() => import("@uiw/react-md-editor").then((mod) =
 
 export default function MDEditorPreview({ content }: any) {
   return (
-    <EditerMarkdown style={{backgroundColor: 'transparent'}} source={content} />
+    <EditerMarkdown
+      style={{
+        backgroundColor: 'transparent',
+        marginBottom: '100px'
+      }}
+      source={content}
+    />
   );
 }

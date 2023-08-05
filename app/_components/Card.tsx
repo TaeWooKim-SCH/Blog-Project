@@ -3,14 +3,13 @@
 import Image from 'next/image';
 import { BsEyeFill, BsHeartFill } from 'react-icons/bs';
 import { IoChatbubbleEllipsesSharp } from 'react-icons/io5';
-import Link from 'next/link';
 
 import style from '../_styles/Card.module.css';
 
 export default function Card({ data }: PropsType) {
 
   return (
-    <Link href={`/post/${data._id}`} className={style.cardContainer}>
+    <a href={`/post/${data._id}`} className={style.cardContainer}>
       <Image className={style.cardImg} src={data.img} width="0" height="0" alt="이미지"></Image>
       <section className={style.cardBottom}>
         <div className={style.cardTitle}>
@@ -33,7 +32,7 @@ export default function Card({ data }: PropsType) {
           </div>
         </div>
       </section>
-    </Link>
+    </a>
   );
 }
 

@@ -1,23 +1,19 @@
+'use client'
+
+import { useSearchParams } from 'next/navigation';
 import style from './page.module.css';
-import Card from './_components/Card';
-import { CardType } from './_components/Card';
+import CardListSSR from './_components/CardListSSR';
 
-async function getData() {
-    const res = await fetch('http://localhost:3000/api/content/list');
-    return res.json();
-}
-
-export default async function Home() {
-  const data = await getData();
+export default function Home() {
+  const searchParams = useSearchParams();
+  const CATEGORY_LIST_URL=`http://localhost:3000/api/content/list?category=${
+    searchParams?.get('category') ? searchParams.get('category') : 'All'
+  }`
 
   return (
     <section className={style.home}>
       <div className={style.homeTitle}>D E V. L o g</div>
-      <section className={style.contentList}>
-        {data.length &&
-          data.map((card: CardType) => <Card key={card._id} data={card} />)
-        }
-      </section>
+      <CardListSSR CATEGORY_LIST_URL={CATEGORY_LIST_URL} />
     </section>
   )
 }
