@@ -80,10 +80,29 @@
   font-size: large;
   padding: 10px 15px;
   margin: auto;
+  margin-bottom: 100px;
   cursor: pointer;
   transition: all 0.5s;
 }
 
 .postBtn:hover {
   background-color: rgba(166, 101, 209, 0.678);
+}
+
+.loading {
+  padding-left: 250px;
+  margin: auto;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  0% {
+    transform: rotate(360deg);
+  }
 }
