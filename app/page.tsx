@@ -5,8 +5,9 @@ import style from './page.module.css';
 import CardListSSR from './_components/CardListSSR';
 
 export default function Home() {
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const searchParams = useSearchParams();
-  const CATEGORY_LIST_URL=`http://localhost:3000/api/content/list?category=${
+  const CATEGORY_LIST_URL=`${API_URL}/api/content/list?category=${
     searchParams?.get('category') ? searchParams.get('category') : 'All'
   }`
 

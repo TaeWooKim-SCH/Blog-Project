@@ -1,8 +1,5 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
 import SideBar from './_components/SideBar'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: "TaeWoo's Blog",

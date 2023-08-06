@@ -4,7 +4,6 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import bcrypt from 'bcryptjs';
 import { CgSpinner } from 'react-icons/cg';
 
 import style from '../_styles/Post.module.css';
@@ -20,6 +19,7 @@ type FormDataType = {
 };
 
 export default function Post() {
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const { register, handleSubmit, setValue, watch, formState: { isSubmitting } } = useForm<FormDataType>();
   const contentValue = watch('content');
 
@@ -30,17 +30,15 @@ export default function Post() {
     else if (!watch('img')) return alert('썸네일 이미지를 등록해주세요.');
 
     const password = prompt('글을 등록하려면 비밀번호를 입력해주세요.');
+
     if (!password) {
       return alert('패스워드를 입력해야 합니다.');
     }
-    const saltRounds = 10;
-    const salt = bcrypt.genSaltSync(saltRounds);
-    const hashedPassword = bcrypt.hashSync(password, salt);
-    console.log(hashedPassword);
+
     try {
-      const res = await fetch('http://localhost:3000/api/content/add', {
+      const res = await fetch(`${API_URL}/api/content/add`, {
         method: 'POST',
-        body: JSON.stringify({data, password: hashedPassword})
+        body: JSON.stringify({data, password})
       })
       if (res.ok) {
         window.location.href = '/';
