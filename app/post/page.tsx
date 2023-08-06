@@ -4,6 +4,8 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import bcrypt from 'bcryptjs';
+import { CgSpinner } from 'react-icons/cg';
 
 import style from '../_styles/Post.module.css';
 import CategorySelect from '../_components/CategorySelect';
@@ -27,13 +29,24 @@ export default function Post() {
     else if (!watch('content')) return alert('내용을 입력해주세요.');
     else if (!watch('img')) return alert('썸네일 이미지를 등록해주세요.');
 
+    const password = prompt('글을 등록하려면 비밀번호를 입력해주세요.');
+    if (!password) {
+      return alert('패스워드를 입력해야 합니다.');
+    }
+    const saltRounds = 10;
+    const salt = bcrypt.genSaltSync(saltRounds);
+    const hashedPassword = bcrypt.hashSync(password, salt);
+    console.log(hashedPassword);
     try {
       const res = await fetch('http://localhost:3000/api/content/add', {
         method: 'POST',
-        body: JSON.stringify(data)
+        body: JSON.stringify({data, password: hashedPassword})
       })
       if (res.ok) {
         window.location.href = '/';
+      }
+      else {
+        return alert('비밀번호가 틀렸습니다.');
       }
     }
     catch(error) {
@@ -52,6 +65,14 @@ export default function Post() {
         }
       }
     }
+  }
+  
+  if (isSubmitting) {
+    return (
+      <div className={style.loading}>
+        <CgSpinner className={style.spinner} size="50" color="A665D1" />
+      </div>
+    );
   }
 
   return (
@@ -93,9 +114,7 @@ export default function Post() {
         </div>
         <button
           className={style.postBtn}
-          disabled={isSubmitting}
         >등록하기</button>
-       {/* <MDEditor.Markdown source={mdText} style={{ padding: 10 }}/> */}
       </form>
     </section>
   );

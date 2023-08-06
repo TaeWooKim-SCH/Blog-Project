@@ -4,6 +4,7 @@ html, body {
   box-sizing: border-box;
   background-color: #181B1F;
   width: 100%;
+  min-height: 100vh;
 }
 
 * {
