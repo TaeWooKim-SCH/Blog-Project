@@ -2,7 +2,8 @@ import style from '../../_styles/PostDetail.module.css';
 import MDEditorPreview from '@/app/_components/MDEditorPreview';
 
 async function getData(id: string) {
-  const res = await fetch(`http://localhost:3000/api/content/${id}`);
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  const res = await fetch(`${API_URL}/api/content/${id}`);
   return res.json();
 }
 

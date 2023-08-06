@@ -8,7 +8,6 @@ export async function connectDB(): Promise<Db> {
   }
   const uri: any = process.env.MONGODB_URI || process.env.REACT_APP_MONGODB_ID
   const client: MongoClient = await MongoClient.connect(uri);
-
   const db: Db = client.db('blog-project');
 
   cachedDb = db;
