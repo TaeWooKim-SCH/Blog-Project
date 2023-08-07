@@ -10,5 +10,6 @@ Next.js와 MongoDB를 이용한 풀스택 프로젝트입니다. 백엔드 기�
 
 ## 완성 결과
 ![image](https://github.com/TaeWooKim-SCH/Blog-Project/assets/79956107/57817d2c-170a-4ca7-9321-59e0cd2f12e7)
+![image](https://github.com/TaeWooKim-SCH/Blog-Project/assets/79956107/0d8c001d-aff4-4ff2-a21c-8102a1abf78f)
 ![image](https://github.com/TaeWooKim-SCH/Blog-Project/assets/79956107/8c265ffe-20ae-4973-9742-590ac4b421b2)
 
