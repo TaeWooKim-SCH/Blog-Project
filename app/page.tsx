@@ -1,20 +1,39 @@
-'use client'
-
-import { useSearchParams } from 'next/navigation';
 import style from './page.module.css';
-import CardListSSR from './_components/CardListSSR';
+import Card, { CardType } from './_components/Card';
 
-export default function Home() {
+export default async function Home({ searchParams }: propsType) {
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
-  const searchParams = useSearchParams();
   const CATEGORY_LIST_URL=`${API_URL}/api/content/list?category=${
-    searchParams?.get('category') ? searchParams.get('category') : 'All'
+    searchParams.category ? searchParams.category : 'All'
   }`
+  const data = await getData(CATEGORY_LIST_URL);
 
   return (
     <section className={style.home}>
       <div className={style.homeTitle}>D E V. L o g</div>
-      <CardListSSR CATEGORY_LIST_URL={CATEGORY_LIST_URL} />
+      <section className={style.contentList}>
+        {data.length ?
+          data.map((card: CardType) => <Card key={card._id} data={card} />) :
+          <h1>글 목록이 존재하지 않습니다.</h1>
+        }
+      </section>
     </section>
   )
+}
+
+async function getData(url: string) {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) {
+      throw new Error('Failed to fetch data!');
+    }
+    return res.json();
+  }
+  catch(err) {
+    console.error(err);
+  }
+}
+
+interface propsType {
+  searchParams: { category: string | null };
 }
