@@ -2,7 +2,6 @@ import { CommentType } from "./Comment";
 import style from '../_styles/Comment.module.css';
 
 export default function CommentCard({ data }: PropsType) {
-  console.log(data);
   return (
     <section className={style.commentCardContainer}>
       <div className={style.author}>{data.author}</div>
