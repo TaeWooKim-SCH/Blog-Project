@@ -1,3 +1,4 @@
+import Comment from '@/app/_components/Comment';
 import style from '../../_styles/PostDetail.module.css';
 import MDEditorPreview from '@/app/_components/MDEditorPreview';
 
@@ -7,7 +8,7 @@ async function getData(id: string) {
   return res.json();
 }
 
-export default async function Detail({ params }: any) {
+export default async function Detail({ params }: PropsType) {
   const { id } = params;
   const data: contentDetailType = await getData(id);
 
@@ -16,6 +17,7 @@ export default async function Detail({ params }: any) {
       <section className={style.detailSection}>
         <h1 className={style.contentTitle}>{data.title}</h1>
         <MDEditorPreview content={data.content} />
+        <Comment contentId={id} />
       </section>
     </main>
   );
@@ -31,4 +33,8 @@ interface contentDetailType {
   views: number;
   answerCount: number;
   createdAt: string;
+}
+
+interface PropsType {
+  params: { id: string };
 }

@@ -1,0 +1,79 @@
+.commentContainer {
+  border-top: 1px solid gray;
+  padding: 50px 30px;
+}
+
+.commentCount {
+  font-size: x-large;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.commentForm {
+  width: 100%;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.commentAutor {
+  background-color: rgb(73, 73, 73);
+  color: white;
+  display: block;
+  width: 200px;
+  height: 25px;
+  outline: none;
+  font-size: large;
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding: 5px 5px;
+  margin-bottom: 10px;
+}
+
+.commentDetail {
+  background-color: rgb(73, 73, 73);
+  color: white;
+  display: block;
+  width: calc(100% - 11px);
+  min-height: 100px;
+  outline: none;
+  font-size: large;
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding: 10px 5px;
+  margin-bottom: 50px;
+  resize: none;
+}
+
+.commentBtn {
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  padding: 5px 10px;
+  background-color: rgb(166, 101, 209);
+  color: white;
+  font-size: large;
+  border: 1px solid gray;
+  border-radius: 5px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.commentBtn:hover {
+  background-color: rgb(119, 66, 155);;
+}
+
+.author {
+  font-weight: bold;
+}
+
+.createdAt {
+  font-size: small;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.commentCardContainer {
+  border-bottom: 1px solid gray;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+}

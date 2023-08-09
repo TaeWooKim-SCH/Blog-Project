@@ -11,7 +11,7 @@ import CategorySelect from '../_components/CategorySelect';
 
 const MDEditor = dynamic(() => import('@uiw/react-md-editor'), { ssr: false });
 
-type FormDataType = {
+interface FormDataType {
   title: string;
   content: string;
   img: string;
