@@ -23,7 +23,7 @@ export default async function Home({ searchParams }: propsType) {
 
 async function getData(url: string) {
   try {
-    const res = await fetch(url);
+    const res = await fetch(url, {cache: 'no-store'});
     if (!res.ok) {
       throw new Error('Failed to fetch data!');
     }
