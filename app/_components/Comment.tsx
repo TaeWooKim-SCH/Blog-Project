@@ -15,7 +15,9 @@ export default async function Comment({ contentId }: PropsType) {
     <section className={style.commentContainer}>
       <div className={style.commentCount}>{commentData.length}개의 댓글</div>
       <CommentForm contentId={contentId} />
-      {commentData.map((comment: CommentType) => <CommentCard data={comment} />)}
+      {commentData.map((comment: CommentType, idx: number) => (
+        <CommentCard data={comment} key={idx} />
+      ))}
     </section>
   );
 }

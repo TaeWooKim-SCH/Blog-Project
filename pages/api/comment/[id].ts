@@ -12,7 +12,7 @@ export default async function handler(
     case 'POST':
       const bodyData = JSON.parse(req.body);
       if (typeof(contentId) === 'string') {
-        const createdAt = new Date().toLocaleString().substring(0, 19);
+        const createdAt = new Date().toLocaleString('ko-KR').substring(0, 19);
         const postData = {
           ...bodyData,
           contentId: new ObjectId(contentId),
