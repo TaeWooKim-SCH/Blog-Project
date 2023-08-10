@@ -4,7 +4,7 @@ import CommentForm from './CommentForm';
 
 async function getData(id: string) {
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
-  const res = await fetch(`${API_URL}/api/comment/${id}`);
+  const res = await fetch(`${API_URL}/api/comment/${id}`, {cache: 'no-store'});
   return res.json()
 }
 
