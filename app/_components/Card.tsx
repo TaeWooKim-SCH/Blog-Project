@@ -1,12 +1,10 @@
-"use client"
-
 import Image from 'next/image';
 import { BsEyeFill, BsHeartFill } from 'react-icons/bs';
 import { IoChatbubbleEllipsesSharp } from 'react-icons/io5';
 
 import style from '../_styles/Card.module.css';
 
-export default function Card({ data }: PropsType) {
+export default async function Card({ data }: PropsType) {
 
   return (
     <a href={`/post/${data._id}`} className={style.cardContainer}>
