@@ -19,6 +19,4 @@
   max-width: 888px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  display: inline-flex;
 }
