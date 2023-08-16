@@ -18,7 +18,6 @@ export default async function handler(
       ...bodyData.data,
       likes: 0,
       views: 0,
-      answerCount: 0,
       createdAt: today
     }
     const result: object = await db.collection('contents').insertOne(data);
