@@ -4,8 +4,13 @@ import MDEditorPreview from '@/app/_components/MDEditorPreview';
 
 async function getData(id: string) {
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
-  const res = await fetch(`${API_URL}/api/content/${id}`);
-  return res.json();
+  try {
+    const res = await fetch(`${API_URL}/api/content/${id}`);
+    return res.json();
+  }
+  catch(err) {
+    console.error(err);
+  }
 }
 
 export default async function Detail({ params }: PropsType) {
