@@ -6,7 +6,7 @@ export default async function Home({ searchParams }: propsType) {
   const CATEGORY_LIST_URL=`${API_URL}/api/content/list?category=${
     searchParams.category ? searchParams.category : 'All'
   }`
-  const data = await getData(CATEGORY_LIST_URL);
+  const data: CardType[] = await getData(CATEGORY_LIST_URL);
 
   return (
     <section className={style.home}>
