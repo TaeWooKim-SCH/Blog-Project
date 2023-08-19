@@ -1,13 +1,13 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { connectDB } from "@/app/_utill/database";
 import { Db } from 'mongodb';
+import { NextResponse } from "next/server";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<any> {
   const db: Db = await connectDB();
-
   if (req.query.category !== 'All') {
     const result: object | null = await db.collection('contents').find(req.query).toArray();
     if (!Array.isArray(result)) {
