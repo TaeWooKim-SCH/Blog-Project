@@ -5,7 +5,12 @@ import MDEditorPreview from '@/app/_components/MDEditorPreview';
 async function getData(id: string) {
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
   try {
-    const res = await fetch(`${API_URL}/api/content/${id}`, {cache: 'no-store'});
+    const res = await fetch(`${API_URL}/api/content/${id}`, {
+      method: 'GET',
+      credentials: 'include',
+      cache: 'no-store'
+    });
+    console.log(res.headers);
     return res.json();
   }
   catch(err) {
