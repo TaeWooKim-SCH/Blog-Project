@@ -1,6 +1,7 @@
 'use client'
 
 import dynamic from 'next/dynamic';
+import { useEffect } from 'react';
 
 // 해당 코드는 Next.js의 dynamic 함수를 사용하여 @uiw/react-md-editor 패키지의 Markdown 컴포넌트를 동적으로 불러오고 있습니다.
 // 이를 통해 해당 컴포넌트가 SSR (서버 사이드 렌더링)에 영향을 미치지 않도록 설정할 수 있습니다.
@@ -19,7 +20,16 @@ const EditerMarkdown = dynamic(() => import("@uiw/react-md-editor").then((mod) =
   { ssr: false }
 );
 
-export default function MDEditorPreview({ content }: any) {
+async function cookieStore(id: string) {
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  const res = await fetch(`${API_URL}/api/content/views/${id}`, {cache: 'no-store'});
+  return res.json();
+}
+
+export default function MDEditorPreview({ content, id }: any) {
+  useEffect(() => {
+    cookieStore(id);
+  }, [])
   return (
     <EditerMarkdown
       style={{

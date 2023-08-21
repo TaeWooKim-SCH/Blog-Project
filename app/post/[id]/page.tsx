@@ -1,7 +1,6 @@
 import Comment from '@/app/_components/Comment';
 import style from '../../_styles/PostDetail.module.css';
 import MDEditorPreview from '@/app/_components/MDEditorPreview';
-import { setCookie } from 'cookies-next';
 
 async function getData(id: string) {
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -18,23 +17,23 @@ async function getData(id: string) {
   }
 }
 
-async function cookieStore(id: string) {
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
-  const res = await fetch(`${API_URL}/api/content/views/${id}`, {cache: 'no-store'});
-  return res.headers;
-}
+// async function cookieStore(id: string) {
+//   const API_URL = process.env.NEXT_PUBLIC_API_URL;
+//   const res = await fetch(`${API_URL}/api/content/views/${id}`, {cache: 'no-store'});
+//   return res.json();
+// }
 
 export default async function Detail({ params }: PropsType) {
   const { id } = params;
   const data: contentDetailType = await getData(id);
-  const cookie = await cookieStore(id);
-  console.log(cookie);
+  // const cookie = await cookieStore(id);
+  // console.log(cookie);
 
   return (
     <main className={style.detailContainer}>
       <section className={style.detailSection}>
         <h1 className={style.contentTitle}>{data.title}</h1>
-        <MDEditorPreview content={data.content} />
+        <MDEditorPreview content={data.content} id={id} />
         <Comment contentId={id} />
       </section>
     </main>
