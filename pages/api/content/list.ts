@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { connectDB } from "@/app/_utill/database";
 import { Db } from 'mongodb';
-import { NextResponse } from "next/server";
 
 export default async function handler(
   req: NextApiRequest,

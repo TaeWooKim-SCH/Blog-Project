@@ -10,12 +10,39 @@
   margin-top: 100px;
 }
 
+.detailTop {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+
 .contentTitle {
-  margin-bottom: 50px;
   font-size: xx-large
 }
 
+.countSection {
+  display: flex;
+  align-items: center;
+}
+
+.countBox {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.count {
+  margin-left: 5px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.icon {
+  color: rgb(204, 204, 204);
+}
 .previewContainer {
   background-color: white;
   margin-bottom: 100px;
 }
+
