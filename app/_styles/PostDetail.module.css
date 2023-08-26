@@ -10,13 +10,6 @@
   margin-top: 100px;
 }
 
-.detailTop {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 20px;
-  margin-bottom: 40px;
-}
-
 .contentTitle {
   font-size: xx-large
 }
@@ -24,6 +17,11 @@
 .countSection {
   display: flex;
   align-items: center;
+  margin-top: 10px;
+}
+
+.createdAt {
+  margin-right: 10px;
 }
 
 .countBox {
@@ -41,6 +39,17 @@
 .icon {
   color: rgb(204, 204, 204);
 }
+
+.tag {
+  width: fit-content;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 3px 8px;
+  background-color: rgb(42, 46, 51);
+  color: rgb(166, 101, 209);
+  border-radius: 10px;
+}
+
 .previewContainer {
   background-color: white;
   margin-bottom: 100px;
