@@ -27,23 +27,23 @@ export default async function Detail({ params }: PropsType) {
   return (
     <main className={style.detailContainer}>
       <section className={style.detailSection}>
-        <section className={style.detailTop}>
-          <h1 className={style.contentTitle}>{data.title}</h1>
-          <section className={style.countSection}>
-            <div className={style.countBox}>
-              <BsEyeFill className={style.icon} />
-              <div className={style.count}>{data.views}</div>
-            </div>
-            <div className={style.countBox}>
-              <BsHeartFill className={style.icon} />
-              <div className={style.count}>{data.likes}</div>
-            </div>
-            <div className={style.countBox}>
-              <IoChatbubbleEllipsesSharp className={style.icon} />
-              <div className={style.count}>{data.answerCount}</div>
-            </div>
-          </section>
+        <h1 className={style.contentTitle}>{data.title}</h1>
+        <section className={style.countSection}>
+          <div className={style.createdAt}>{data.createdAt}</div>
+          <div className={style.countBox}>
+            <BsEyeFill className={style.icon} />
+            <div className={style.count}>{data.views}</div>
+          </div>
+          <div className={style.countBox}>
+            <BsHeartFill className={style.icon} />
+            <div className={style.count}>{data.likes}</div>
+          </div>
+          <div className={style.countBox}>
+            <IoChatbubbleEllipsesSharp className={style.icon} />
+            <div className={style.count}>{data.answerCount}</div>
+          </div>
         </section>
+        <div className={style.tag}># {data.category}</div>
         <MDEditorPreview content={data.content} id={id} />
         <Comment contentId={id} />
       </section>
