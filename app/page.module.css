@@ -20,3 +20,16 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+@media (max-width: 1150px) {
+  .contentList {
+    max-width: 592px;
+  }
+}
+
+@media (max-width: 855px) {
+  .contentList {
+    max-width: 296px;
+  }
+}
+
