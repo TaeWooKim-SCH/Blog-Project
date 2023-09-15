@@ -18,8 +18,8 @@ Next.js 13버전의 app 디렉토리에서 서버 사이드 렌더링을 구현�
 고민한 시간에 비해 너무 허무했던 문제 해결이었습니다.
 
 
-
 ## 완성 결과
+<a href="https://taewoo-blog.vercel.app/"><h3>배포링크</h3></a>
 ![image](https://github.com/TaeWooKim-SCH/Blog-Project/assets/79956107/57817d2c-170a-4ca7-9321-59e0cd2f12e7)
 ![image](https://github.com/TaeWooKim-SCH/Blog-Project/assets/79956107/0d8c001d-aff4-4ff2-a21c-8102a1abf78f)
 ![image](https://github.com/TaeWooKim-SCH/Blog-Project/assets/79956107/8c265ffe-20ae-4973-9742-590ac4b421b2)
